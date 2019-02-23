@@ -23,8 +23,7 @@ def analysisGET(request):
 def analysisPOST(request):
     print('POST Request Recieved :' + request.method)
     if request.method == 'POST':
-        r_data = json.loads(request.body)
-        print(r_data)
+        print(request.body)
         data = {
             'response': 'It was a POST Request'
         }
