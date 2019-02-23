@@ -8,6 +8,7 @@ import requests
 import numpy as np
 from bs4 import BeautifulSoup as bs
 import urllib.request as urllib
+from selenium.webdriver.common.by import By
 from selenium import webdriver
 
 class Analysis:
@@ -118,8 +119,14 @@ class Analysis:
         Purpose: Grabs image from url and saves as required name
     """
     def grab_image(self, url, image_name):
-        driver = webdriver.Chrome('C:\\Users\\Taha Masood\\Downloads\\chromedriver.exe')
-        driver.get('https://transparencyreport.google.com/political-ads/advertiser/AR100996740080992256/creative/CR111833526684352512')
+        try:
+            driver = webdriver.Chrome('C:\\Users\\Taha Masood\\Downloads\\chromedriver.exe')
+            driver.get(url)
+
+            print(driver.page_source)
+            driver.close()
+        except:
+            print('no image')
 
     """
         Purpose: Pulls all images from the current dataset

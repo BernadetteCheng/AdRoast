@@ -9,6 +9,8 @@ import matplotlib
 import math
 import pandas as pd
 import numpy as np
+import time
+
 
 class Images:
 
@@ -41,7 +43,7 @@ class Images:
     """
     def import_image(self, filepath, image_name):
         assert not self.exists_image(self, image_name), 'Image already exists!'
-        self.images[image_name] = cv2.imread(filepath)
+        self.images[image_name] = cv2.imread(filepath, cv2.COLOR_BGR2RGB)
 
     """
         Name: print_image()
@@ -51,3 +53,30 @@ class Images:
     def print_image(self, image_name):
         assert self.exists_image(self, image_name), 'Image does not exist!'
         cv2.imshow(image_name, self.images[image_name])
+        cv2.waitKey()
+
+    """
+        Name: brief_feature
+        Purpose: Conducts brief feature extraction
+    """
+    def brief_feature_extraction(self, image_name):
+        assert self.exists_image(self, image_name), 'Image does not exist'
+
+        star = cv2.FeatureDetector_create("STAR")
+        brief = cv2.DescriptorExtractor_create("BRIEF")
+
+        star_detection = star.detect(self.images[image_name], None)
+        star_detection, descriptions = brief.compute(self.images[image_name], star_detection)
+
+        print(brief.getInt('bytes'))
+        print(descriptions.shape)
+
+    def sift_feature_extraction(self, image_name):
+        assert self.exists_image(self, image_name), 'Image does not exist'
+        gray = cv2.cvtColor(self.images[image_name], cv2.COLOR_BGR2GRAY)
+
+        sift = cv2.SIFT()
+        kp = sift.detect(gray, None)
+        img = cv2.drawKeypoints(gray, kp)
+
+        cv2.imwrite('sift_keypoints.jpg', img)
