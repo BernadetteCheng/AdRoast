@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="819c1333-6f4f-453e-a6c8-4a1b35f4c98c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/10795125566885164803.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/CR111833526684352512.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/CR183144002571206656.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Data/Analysis/CleaningToolkit.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Data/Analysis/CleaningToolkit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ImageExtraction/ImportImages.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ImageExtraction/ImportImages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Images/10795125566885164803.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/SimulateTraining.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/SimulateTraining.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Source/SimulateTraining.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+            <state relative-caret-position="204">
+              <caret line="12" column="33" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="33" />
               <folding>
                 <element signature="e#100#156#0" expanded="true" />
               </folding>
@@ -30,14 +26,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Source/ImageExtraction/ImportImages.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Source/Data/Analysis/CleaningToolkit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="67" column="59" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="59" />
+            <state relative-caret-position="150">
+              <caret line="173" column="45" selection-start-line="173" selection-start-column="45" selection-end-line="173" selection-end-column="45" />
               <folding>
-                <element signature="e#104#114#0" expanded="true" />
+                <element signature="e#89#108#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Source/Data/Analysis/ImageAccess.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -57,17 +62,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Source/Data/Analysis/CleaningToolkit.py" />
         <option value="$PROJECT_DIR$/Source/ImageExtraction/ImportImages.py" />
         <option value="$PROJECT_DIR$/Source/SimulateTraining.py" />
+        <option value="$PROJECT_DIR$/Source/Data/Analysis/CleaningToolkit.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="2145" />
-    <option name="y" value="-18" />
-    <option name="width" value="1401" />
-    <option name="height" value="1002" />
+    <option name="x" value="1905" />
+    <option name="width" value="1950" />
+    <option name="height" value="2085" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -180,11 +184,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1292" height="702" extended-state="7" />
+    <frame x="-6" y="-6" width="1292" height="702" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.0631068" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15857606" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" />
@@ -192,8 +196,8 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.38501742" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29616725" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.085365854" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -212,26 +216,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Source/Data/Analysis/ImageAccess.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Source/Data/Analysis/CleaningToolkit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="126" column="12" selection-start-line="126" selection-start-column="12" selection-end-line="126" selection-end-column="12" />
-          <folding>
-            <element signature="e#89#108#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Source/ImageExtraction/ImportImages.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
+        <state relative-caret-position="527">
           <caret line="67" column="59" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="59" />
           <folding>
             <element signature="e#104#114#0" expanded="true" />
@@ -239,12 +226,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Source/Data/GoogleData/clean_data_tony_image_only.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Source/SimulateTraining.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        <state relative-caret-position="204">
+          <caret line="12" column="33" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="33" />
           <folding>
             <element signature="e#100#156#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/Data/Analysis/ImageAccess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Source/Data/Analysis/CleaningToolkit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="173" column="45" selection-start-line="173" selection-start-column="45" selection-end-line="173" selection-end-column="45" />
+          <folding>
+            <element signature="e#89#108#0" expanded="true" />
           </folding>
         </state>
       </provider>

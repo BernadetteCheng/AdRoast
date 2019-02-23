@@ -3,6 +3,7 @@
     Purpose: Clean raw google advertisement dataset
 """
 import pandas as pd
+import requests
 from lxml import html
 import requests
 import numpy as np
@@ -134,3 +135,53 @@ class Analysis:
     def pull_images(self, data_name):
         for row in self.datasets[data_name].itertuples():
             self.grab_image(row[3], row[2] + '.jpg')
+
+    """
+        Name: drop_null
+        Purpose: Drops all null values in a given feature
+    """
+    def drop_null(self, data_name, feature_name):
+        assert self.exists_df(data_name), 'Dataset does not exist'
+        self.datasets[data_name] = self.datasets[data_name].dropna(subset=[feature_name])
+        self.datasets[data_name] = self.datasets[data_name][self.datasets[data_name].img != 'f']
+
+    """
+        Name: ready_parse
+        Purpose: Cleans for only required data
+    """
+    def ready_parse(self, data_name):
+        assert self.exists_df(data_name), 'Dataset does not exist'
+
+        self.datasets[data_name] = self.datasets[data_name][['id',
+                                                             'url',
+                                                             'type',
+                                                             'cost',
+                                                             'impression',
+                                                             'effect',
+                                                             'img']]
+
+    """
+        Name: 'download_images'
+        Purpose: Downloads required images to appropriate location
+    """
+    def download_images(self, data_name):
+        assert self.exists_df(data_name), 'Dataset does not exist'
+
+        for sample in self.datasets[data_name].itertuples():
+            current_url = sample[8]
+            print(current_url)
+
+            filename = 'Images\\' + sample[2] + '.jpg'
+            req = requests.get(current_url, allow_redirects=True)
+            open(filename, 'wb').write(req.content)
+
+    """
+        Name: 'append_df'
+        Purpose: Appends two datasets together
+    """
+    def append_df(self, data_name_one, data_name_two, resultant_dataset):
+        assert self.exists_df(data_name_one), 'Dataset does not exist!'
+        assert self.exists_df(data_name_two), 'Dataset does not exist!'
+        assert not self.exists_df(resultant_dataset), 'Dataset already exists!'
+
+        self.datasets[resultant_dataset] = self.datasets[data_name_one].append(self.datasets[data_name_two], ignore_index=True)
