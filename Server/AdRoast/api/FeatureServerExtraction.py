@@ -6,8 +6,12 @@
 import cv2
 import pickle
 import pandas as pd
+import numpy as np
+import scipy
+from scipy import stats
 
 MODEL_PATH = '/static/adroast_model.sav'
+effectiveness_classification = {}
 
 def extract_feature(filepath):
     ad_image = cv2.imread(filepath, cv2.COLOR_BGR2RGB)
@@ -78,7 +82,7 @@ def harris_corner_detection(image):
 @staticmethod
 def rgb_hist_analysis(image):
     specific_amounts = []
-    histograms = self.rgb_hist(image)
+    histograms = rgb_hist(image)
 
     for histogram in histograms:
         mean = np.mean(histogram)
@@ -102,7 +106,7 @@ def rgb_hist(image):
     rgb_histograms = []
 
     for i, colour in enumerate(colour):
-        rgb_histogram = cv2.calcHist([image, [i], None, [256], [0, 256])
+        rgb_histogram = cv2.calcHist([image], [i], None, [256], [0, 256])
         rgb_histograms.append(rgb_histogram)
 
     return(rgb_histograms)
