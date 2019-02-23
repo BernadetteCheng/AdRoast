@@ -1,7 +1,3 @@
-"""
-    Name: download.py
-"""
-
 import requests
 
 url = 'https://tpc.googlesyndication.com/simgad/3605728719349916052'
