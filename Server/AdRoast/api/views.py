@@ -20,8 +20,10 @@ def analysisGET(request):
 
 @csrf_exempt
 def analysisPOST(request):
-    print('POST Request Recieved :' + request.method + request.body)
+    print('POST Request Recieved :' + request.method)
     if request.method == 'POST':
+        r_data = json.loads(request.body)
+        print(r_data.image)
         data = {
             'response': 'It was a POST Request'
         }
