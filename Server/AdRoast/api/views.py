@@ -19,6 +19,12 @@ def analysisGET(request):
 def analysisPOST(request):
     print('POST Request Recieved :' + request.method + str(request))
     if request.method == 'POST':
-        return HttpResponseBadRequest(str(request));
+        data = {
+            'response': 'It was a POST Request'
+        }
+        return JsonResponse(data)
     else:
-        return HttpResponseBadRequest(str(request));
+        data = {
+            'response': '8===D'
+        }
+        return JsonResponse(data)
