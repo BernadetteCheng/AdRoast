@@ -19,6 +19,7 @@ from api import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('analysisGET/', views.analysisGET, name='get'),
-    path('analysisPOST/', views.analysisPOST, name='post'),
+    path('', views.index, name="index"),
+    path('analysisGET/', routes.analysisGET, name='get'),
+    path('analysisPOST/', routes.analysisPOST, name='post'),
 ]
