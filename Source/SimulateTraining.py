@@ -9,10 +9,19 @@ from ImageExtraction.ImportImages import Images as im
 
 def main():
     image_analysis = im()
-    im.import_image(image_analysis, 'Data\\Images\\10795125566885164803.jpg', 'original')
-    im.image_colorfulness(image_analysis, 'original')
-    im.harris_corner_detection(image_analysis, 'original', False)
-    im.rgb_hist_analysis(image_analysis, 'original')
+    data_analysis = an()
+
+    an.import_csv(data_analysis, 'C:\\Users\\Taha Masood\\Desktop\\AdRoast\\Source\\Data\\GoogleData\\clean_final.csv', 'clean')
+    final_df = an.get_df(data_analysis, 'clean')
+
+    for row in final_df.itertuples():
+        image_path = 'Images\\' + row[2] + '.jpg'
+        im.import_image(image_analysis, image_path, row[2])
+
+    final_df = final_df[['id', 'effect']]
+    final_df = im.grab_features(image_analysis, final_df)
+    final_df = final_df.dropna(subset=['r_mean'])
+    final_df.to_csv('Training\\FinalTrain.csv')
 
 if __name__ == '__main__':
     main()

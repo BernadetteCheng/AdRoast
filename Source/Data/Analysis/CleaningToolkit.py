@@ -185,3 +185,11 @@ class Analysis:
         assert not self.exists_df(resultant_dataset), 'Dataset already exists!'
 
         self.datasets[resultant_dataset] = self.datasets[data_name_one].append(self.datasets[data_name_two], ignore_index=True)
+
+    """
+        Name: get_df
+        Purpose: Returns the appropriate dataframe back to simulation
+    """
+    def get_df(self, data_name):
+        assert self.exists_df(data_name), 'Dataset does not exist!'
+        return self.datasets[data_name]

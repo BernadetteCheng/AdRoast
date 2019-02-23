@@ -176,3 +176,140 @@ class Images:
             specific_amounts.append(float(skewness))
 
         return specific_amounts
+
+    """
+        Name: grab_features
+        Purpose: Cleans and extracts required image features
+    """
+    def grab_features(self, final_df):
+        final_df['colorfullness'] = final_df.apply(self.colorful, axis=1)
+        final_df['edges'] = final_df.apply(self.edges, axis=1)
+        final_df['r_mean'] = final_df.apply(self.rmean, axis=1)
+        final_df['r_variance'] = final_df.apply(self.rvar, axis=1)
+        final_df['r_kurtosis'] = final_df.apply(self.rkurtosis, axis=1)
+        final_df['r_skewness'] = final_df.apply(self.rskew, axis=1)
+        final_df['g_mean'] = final_df.apply(self.gmean, axis=1)
+        final_df['g_variance'] = final_df.apply(self.gvar, axis=1)
+        final_df['g_kurtosis'] = final_df.apply(self.gkurtosis, axis=1)
+        final_df['g_skewness'] = final_df.apply(self.gskew, axis=1)
+        final_df['b_mean'] = final_df.apply(self.bmean, axis=1)
+        final_df['b_variance'] = final_df.apply(self.bvar, axis=1)
+        final_df['b_kurtosis'] = final_df.apply(self.bkurtosis, axis=1)
+        final_df['b_skewness'] = final_df.apply(self.bskew, axis=1)
+
+        return final_df
+
+    """
+        Purpose: Receives updated feature from image
+    """
+    def colorful(self, row):
+        try:
+            return self.image_colorfulness(row.id)
+        except:
+            print('Exception')
+
+    """
+        Purpose: Receives updated feature from image
+    """
+    def edges(self, row):
+        try:
+            return self.harris_corner_detection(row.id, False)
+        except:
+            print('Exception')
+
+    """
+        Purpose: Receives updated feature from image
+    """
+    def rmean(self, row):
+        try:
+            return self.rgb_hist_analysis(row.id)[0]
+        except:
+            print('Exception')
+    """
+        Purpose: Receives updated feature from image
+    """
+    def rvar(self, row):
+        try:
+            return self.rgb_hist_analysis(row.id)[1]
+        except:
+            print('Exception')
+    """
+        Purpose: Receives updated feature from image
+    """
+    def rkurtosis(self, row):
+        try:
+            return self.rgb_hist_analysis(row.id)[2]
+        except:
+            print('Exception')
+    """
+        Purpose: Receives updated feature from image
+    """
+    def rskew(self, row):
+        try:
+            return self.rgb_hist_analysis(row.id)[3]
+        except:
+            print('Exception')
+    """
+        Purpose: Receives updated feature from image
+    """
+    def gmean(self, row):
+        try:
+            return self.rgb_hist_analysis(row.id)[4]
+        except:
+            print('Exception')
+    """
+        Purpose: Receives updated feature from image
+    """
+    def gvar(self, row):
+        try:
+            return self.rgb_hist_analysis(row.id)[5]
+        except:
+            print('Exception')
+    """
+        Purpose: Receives updated feature from image
+    """
+    def gkurtosis(self, row):
+        try:
+            return self.rgb_hist_analysis(row.id)[6]
+        except:
+            print('Exception')
+    """
+        Purpose: Receives updated feature from image
+    """
+    def gskew(self, row):
+        try:
+            return self.rgb_hist_analysis(row.id)[7]
+        except:
+            print('Exception')
+    """
+        Purpose: Receives updated feature from image
+    """
+    def bmean(self, row):
+        try:
+            return self.rgb_hist_analysis(row.id)[8]
+        except:
+            print('Exception')
+    """
+        Purpose: Receives updated feature from image
+    """
+    def bvar(self, row):
+        try:
+            return self.rgb_hist_analysis(row.id)[9]
+        except:
+            print('Exception')
+    """
+        Purpose: Receives updated feature from image
+    """
+    def bkurtosis(self, row):
+        try:
+            return self.rgb_hist_analysis(row.id)[10]
+        except:
+            print('Exception')
+    """
+        Purpose: Receives updated feature from image
+    """
+    def bskew(self, row):
+        try:
+            return self.rgb_hist_analysis(row.id)[11]
+        except:
+            print('Exception')
