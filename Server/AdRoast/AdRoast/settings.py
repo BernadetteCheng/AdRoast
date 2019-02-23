@@ -56,7 +56,7 @@ ROOT_URLCONF = 'AdRoast.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['./Frontend/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
