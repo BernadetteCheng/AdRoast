@@ -7,7 +7,7 @@ import cv2
 import pickle
 import pandas as pd
 
-MODEL_PATH = 'adroast_model.sav'
+MODEL_PATH = '/static/adroast_model.sav'
 
 def extract_feature(filepath):
     ad_image = cv2.imread(filepath, cv2.COLOR_BGR2RGB)
