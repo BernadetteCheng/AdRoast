@@ -19,7 +19,7 @@ class Train:
     """
     def __init__(self):
         self.train = {}
-        parameters = {'n_estimators' : 10,
+        self.parameters = {'n_estimators' : 10,
                       'max_depth' : 20,
                       'learning_rate' : 1,
                       'criterion' : 'mse'}
@@ -30,4 +30,6 @@ class Train:
     def train_model(self, input_features, target_values):
         gradient_boosting_regressor = ensemble.GradientBoostingRegressor(**self.parameters)
         gradient_boosting_regressor.fit(input_features, target_values)
-        pickle.dump(gradient_boosting_regressor, 'adroast.model')
+
+        filename = 'adroast_model.sav'
+        pickle.dump(gradient_boosting_regressor, open(filename, 'wb'))

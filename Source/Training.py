@@ -12,7 +12,7 @@ def main():
     model_training = tr()
 
     an.import_csv(data_analysis, 'C:\\Users\\Taha Masood\\Desktop\\AdRoast\\Source\\Training\\FinalTrain.csv' , 'train')
-    train_df = an.get_df('train')
+    train_df = an.get_df(data_analysis, 'train')
 
     input_features = train_df[['colorfullness',
                                'edges',
@@ -29,7 +29,7 @@ def main():
                                'b_kurtosis',
                                'b_skewness']]
 
-    target_features = train_df[['effect']]
+    target_features = train_df['effect']
     tr.train_model(model_training, input_features, target_features)
 
 if __name__=='__main__':
