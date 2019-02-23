@@ -11,3 +11,4 @@ This Android application allows the user to indicate their buisness and sector, 
   - Robust Python backend
   - Aglie Django backend
   - Sublime Java frontend (Android Studio)
+  - Love
