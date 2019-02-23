@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 import json
+import base64
 from django.http import JsonResponse, HttpResponseBadRequest, HttpResponseServerError
 from api.script import *
 
@@ -23,7 +24,8 @@ def analysisGET(request):
 def analysisPOST(request):
     print('POST Request Recieved :' + request.method)
     if request.method == 'POST':
-        print(request.body)
+        with open("imageToSave.png", "wb") as fh:
+            fh.write(base64.decodebytes(request.body))
         data = {
             'response': 'It was a POST Request'
         }
