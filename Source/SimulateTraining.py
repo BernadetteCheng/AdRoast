@@ -6,7 +6,6 @@
 from Data.Analysis.CleaningToolkit import Analysis as an
 from ImageExtraction.ImportImages import Images as im
 
-
 def main():
     image_analysis = im()
     data_analysis = an()
