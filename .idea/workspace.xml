@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="819c1333-6f4f-453e-a6c8-4a1b35f4c98c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Training/TrainModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Training/TrainModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/adroast_model.sav" beforeDir="false" afterPath="$PROJECT_DIR$/Source/adroast_model.sav" afterDir="false" />
-    </list>
+    <list default="true" id="819c1333-6f4f-453e-a6c8-4a1b35f4c98c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/Source/Training/TrainModel.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="94">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
               <folding>
                 <element signature="e#101#120#0" expanded="true" />
               </folding>
@@ -241,7 +237,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1292" height="702" extended-state="6" />
+    <frame x="-6" y="-6" width="1292" height="702" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.024271844" />
@@ -323,7 +319,7 @@
     <entry file="file://$PROJECT_DIR$/Source/Training/TrainModel.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="94">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
           <folding>
             <element signature="e#101#120#0" expanded="true" />
           </folding>
