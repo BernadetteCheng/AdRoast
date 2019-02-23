@@ -46,4 +46,6 @@
     <string name="todo">TODO</string>
     <string name="adroast">AdRoast</string>
     <string name="adroast">AdRoast</string>
+    <string name="take_another">Take Another</string>
+    <string name="confirm">Confirm</string>
 </resources>
