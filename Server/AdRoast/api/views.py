@@ -6,10 +6,10 @@ def analysisGET(request):
     print('GET Request Recieved :' + request.method)
     if request.method == 'GET':
         data = {
-            'id' = '1',
-            'param1' = 'Hahaha',
-            'param2' = 'Your ad sucks',
-            'param3' = 'Try again.'
+            'id': '1',
+            'param1': 'Hahaha',
+            'param2': 'Your ad sucks',
+            'param3': 'Try again.'
         }
         return JsonResponse(data)
     else:
