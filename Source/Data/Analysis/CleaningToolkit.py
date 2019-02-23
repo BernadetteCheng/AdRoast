@@ -3,8 +3,12 @@
     Purpose: Clean raw google advertisement dataset
 """
 import pandas as pd
+from lxml import html
+import requests
 import numpy as np
-
+from bs4 import BeautifulSoup as bs
+import urllib.request as urllib
+from selenium import webdriver
 
 class Analysis:
 
@@ -109,3 +113,17 @@ class Analysis:
     """
     def impressions(self, row):
         return self.impression[row.Impressions]
+
+    """
+        Purpose: Grabs image from url and saves as required name
+    """
+    def grab_image(self, url, image_name):
+        driver = webdriver.Chrome('C:\\Users\\Taha Masood\\Downloads\\chromedriver.exe')
+        driver.get('https://transparencyreport.google.com/political-ads/advertiser/AR100996740080992256/creative/CR111833526684352512')
+
+    """
+        Purpose: Pulls all images from the current dataset
+    """
+    def pull_images(self, data_name):
+        for row in self.datasets[data_name].itertuples():
+            self.grab_image(row[3], row[2] + '.jpg')
