@@ -24,7 +24,7 @@ def analysisPOST(request):
     print('POST Request Recieved :' + request.method)
     if request.method == 'POST':
         r_data = json.loads(request.body)
-        print(r_data.image)
+        print(r_data)
         data = {
             'response': 'It was a POST Request'
         }
