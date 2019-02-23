@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -20,7 +21,7 @@ public class confirm extends AppCompatActivity {
         setContentView(R.layout.activity_confirm);
 
         ImageView imageCont = (ImageView) findViewById(R.id.imageView);
-        byte[] imgByteArray = getIntent().getByteArrayExtra("Image");
+        final byte[] imgByteArray = getIntent().getByteArrayExtra("Image");
         imageCont.setImageBitmap(BitmapFactory.decodeByteArray(imgByteArray,0,imgByteArray.length));
 
         Button btn = (Button) findViewById(R.id.button5);
@@ -37,6 +38,7 @@ public class confirm extends AppCompatActivity {
         cont.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String b64img = Base64.encodeToString(imgByteArray, Base64.DEFAULT);
                 Intent intent = new Intent(confirm.this, response.class);
                 startActivity(intent);
             }
