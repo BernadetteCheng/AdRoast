@@ -4,3 +4,4 @@ from api import views
 urlpatterns = [
     url(r'^analysis/', 'api.views.analysisGET'),
 ]
+    
