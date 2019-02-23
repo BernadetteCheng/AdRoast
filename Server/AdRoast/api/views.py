@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse, HttpResponseBadRequest, HttpResponseServerError
 from api.script import *
 
 # Create your views here.
+@csrf_exempt
 def analysisGET(request):
     print('GET Request Recieved :' + request.method + str(request))
     if request.method == 'GET':
@@ -16,6 +18,7 @@ def analysisGET(request):
     else:
         return HttpResponseBadRequest(str(request));
 
+@csrf_exempt
 def analysisPOST(request):
     print('POST Request Recieved :' + request.method + str(request))
     if request.method == 'POST':
