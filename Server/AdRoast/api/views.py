@@ -6,4 +6,4 @@ from django.http import JsonResponse, HttpResponseBadRequest, HttpResponseServer
 from api.script import *
 
 def index(request):
-    return render(request, '../Frontend/index.html', context={'id': 1})
+    return render(request, './Frontend/index.html', context={'id': 1})
