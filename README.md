@@ -8,6 +8,6 @@ Usually, large businesses have developed and sophisticated marketing departments
 This Android application allows the user to indicate their buisness and sector, then upload or capture their advertisements for inspection. The app will then send the image to the python backend which will essentially 'critique' the advertisements and provide potential pointers on what can improved. These results will then be displayed to the user so they can improve their advertising before pubication.
 
 ### How It was Built:
-  - Python backend
-  - Django backend
-  - Java frontend (Android Studio)
+  - Robust Python backend
+  - Aglie Django backend
+  - Sublime Java frontend (Android Studio)
