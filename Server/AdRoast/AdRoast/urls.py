@@ -20,4 +20,5 @@ from api import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('analysisGET/', views.analysisGET, name='get'),
+    path('anaylsisPOST/', views.analysisPOST, name='post'),
 ]
