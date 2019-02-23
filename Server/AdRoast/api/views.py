@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse, HttpResponseBadRequest, HttpResponseServerError
-from script import *
+from api.script import *
 
 # Create your views here.
 def analysisGET(request):
