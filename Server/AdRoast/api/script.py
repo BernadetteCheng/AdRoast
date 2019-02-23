@@ -1,3 +1,2 @@
 def testscript():
-    print("Hello World")
-    return True
+    return 'Script Worked'

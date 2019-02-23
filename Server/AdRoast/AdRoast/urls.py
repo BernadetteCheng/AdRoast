@@ -19,5 +19,5 @@ from api import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path(r'^analysisGET/', views.analysisGET, name='get'),
+    path('analysisGET/', views.analysisGET, name='get'),
 ]

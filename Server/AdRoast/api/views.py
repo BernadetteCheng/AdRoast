@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse, HttpResponseBadRequest, HttpResponseServerError
+from testscript import *
 
 # Create your views here.
 def analysisGET(request):
@@ -7,7 +8,7 @@ def analysisGET(request):
     if request.method == 'GET':
         data = {
             'id': '1',
-            'param1': 'Hahaha',
+            'param1': testscript(),
             'param2': 'Your ad sucks',
             'param3': 'Try again.'
         }
