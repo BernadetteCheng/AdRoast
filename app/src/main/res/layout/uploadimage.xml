@@ -21,7 +21,8 @@
             app:layout_constraintHorizontal_bias="0.475"
             app:layout_constraintStart_toStartOf="@+id/imageButton10"
             app:layout_constraintTop_toTopOf="@+id/imageButton10"
-            app:srcCompat="@drawable/ic_upload_foreground" />
+            app:srcCompat="@drawable/ic_upload_foreground"
+            android:contentDescription="TODO" />
 
         <ImageButton
             android:id="@+id/imageButton8"
