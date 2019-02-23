@@ -1,4 +1,14 @@
 # AdRoast
 ## An advertisement critiquing application specifically targeted to small businesses for advertisment improvement. 
 
-### Usually large business have really sophisticated marketing departments and are able to gather lots of data around their consumer base. However this is not possible for small businesses (by small I mean private owned less than 50 employee places). Ideally, considering everyone's backgrounds, we will make an android application which will allow a user to indicate their buisness and sector then upload a few of their advertisements. Our app will then send this information to our python backend which will essentially critique the advertisements and provide some pointers on what they can improve. The front end will then display all of this back to the user so that they can improve their advertising.
+### Inspiration/Problem:
+Usually, large businesses have developed and sophisticated marketing departments and are able to gather large quntities of data around their consumer base. This, however, is not possible for small businesses (less than 50 employees). 
+
+### What Does It Do:
+This Android application allows the user to indicate their buisness and sector, then upload or capture their advertisements for inspection. The app will then send the image to the python backend which will essentially 'critique' the advertisements and provide potential pointers on what can improved. These results will then be displayed to the user so they can improve their advertising before pubication.
+
+### How It was Built:
+  - Robust Python backend
+  - Aglie Django backend
+  - Sublime Java frontend (Android Studio)
+  - Love
