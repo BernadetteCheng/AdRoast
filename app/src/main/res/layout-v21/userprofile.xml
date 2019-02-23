@@ -19,13 +19,13 @@ tools:context=".FullscreenActivity">
             android:backgroundTint="@android:color/white"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Company Name"
+            android:text="@string/company_name"
             android:textColor="#ffffff"
             app:layout_constraintEnd_toEndOf="@+id/imageButton2"
             app:layout_constraintHorizontal_bias="0.437"
             app:layout_constraintStart_toStartOf="@+id/imageButton2"
             app:layout_constraintTop_toTopOf="parent"
-            android:autofillHints="" />
+            android:autofillHints="" tools:targetApi="o" />
 
         <EditText
             android:id="@+id/editText3"
@@ -35,12 +35,13 @@ tools:context=".FullscreenActivity">
             android:backgroundTint="@android:color/white"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Username"
+            android:text="@string/username"
             android:textColor="#ffffff"
             app:layout_constraintEnd_toEndOf="@+id/editText4"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/editText4"
-            app:layout_constraintTop_toBottomOf="@+id/editText4" />
+            app:layout_constraintTop_toBottomOf="@+id/editText4"
+            android:autofillHints="" tools:targetApi="o"/>
 
         <EditText
             android:id="@+id/editText4"
@@ -50,12 +51,13 @@ tools:context=".FullscreenActivity">
             android:backgroundTint="@android:color/white"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Email"
+            android:text="@string/email"
             android:textColor="#ffffff"
             app:layout_constraintEnd_toEndOf="@+id/editText2"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/editText2"
-            app:layout_constraintTop_toBottomOf="@+id/editText2" />
+            app:layout_constraintTop_toBottomOf="@+id/editText2"
+            android:autofillHints="" tools:targetApi="o"/>
 
         <ImageButton
             android:id="@+id/imageButton2"
@@ -96,7 +98,7 @@ tools:context=".FullscreenActivity">
             app:layout_constraintEnd_toEndOf="@+id/editText3"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/editText3"
-            app:layout_constraintTop_toBottomOf="@+id/editText3" />
+            app:layout_constraintTop_toBottomOf="@+id/editText3" tools:targetApi="o"/>
 
         <Button
             android:id="@+id/button3"
