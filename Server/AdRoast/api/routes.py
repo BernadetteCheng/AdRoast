@@ -3,35 +3,23 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 import base64
 from django.http import JsonResponse, HttpResponseBadRequest, HttpResponseServerError
-from api.script import *
-
-# Create your views here.
-@csrf_exempt
-def analysisGET(request):
-    print('GET Request Recieved :' + request.method + str(request))
-    if request.method == 'GET':
-        data = {
-            'id': '1',
-            'param1': testscript(),
-            'param2': 'Your ad sucks',
-            'param3': 'Try again.'
-        }
-        return JsonResponse(data)
-    else:
-        return HttpResponseBadRequest(str(request));
+from api.FeatureServerExtraction import *
 
 @csrf_exempt
 def analysisPOST(request):
     print('POST Request Recieved :' + request.method)
     if request.method == 'POST':
-        with open("imageToSave.png", "wb") as fh:
+        with open("parsedImage.png", "wb") as fh:
             fh.write(base64.decodebytes(request.body))
+        result = extract_feature("parsedImage.png")
         data = {
-            'response': 'It was a POST Request'
+            'grade': result[0],
+            'improvements': result[1],
+            'score': result[2]
         }
         return JsonResponse(data)
     else:
         data = {
-            'response': '8===D'
+            'response': 'Not a POST request'
         }
         return JsonResponse(data)

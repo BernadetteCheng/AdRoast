@@ -21,6 +21,5 @@ from api import routes
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"),
-    path('analysisGET/', routes.analysisGET, name='get'),
     path('analysisPOST/', routes.analysisPOST, name='post'),
 ]
