@@ -3,6 +3,8 @@
   $upload_button = $("#img_upload_button")
 
   $upload_button.onClick({
+    console.log("click");
+    /*
     jQuery.noConflict();
     formdata = new FormData();
     var file = $img_form.prop('files');
@@ -21,6 +23,7 @@
               console.log('oof');
             }
         });
-    }
-  })
+      }
+    })
+    */
 })(jQuery);
