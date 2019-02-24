@@ -137,7 +137,40 @@ def text_len(image):
     Purpose: gets the top required improvements to improve advertisement
 """
 def top_improvements(feature_list):
-    return 0
+    feature_median = {'edges' : 250,
+                      'colorfullness' : 71.70386,
+                      'text_len' : 61,
+                      'word_len' : 4.5}
+
+    edge_deviance = (feature_list['edges'] - feature_median['edges'])/feature_median['edges']
+    colorfullness_deviance = (feature_list['colorfullness'] - feature_median['colorfullness'])/feature_median['colorfullness']
+    text_len_deviance = (feature_list['text_len'] - feature_median['text_len'])/feature_median['text_len']
+    word_len_deviance = (feature_list['word_len'] - feature_median['word_len'])/feature_median['word_len']
+
+    deviances = [edge_deviance, colorfullness_deviance, text_len_deviance, word_len_deviance]
+    deviances = deviances.sort(reverse=True)
+
+    updates = [deviances[0], deviances[1]]
+    return_information = {}
+
+    if updates[0] == edge_deviance:
+        return_information['edges'] = [600, feature_list['edges'], 'Too many plane pieces in the advertisement']
+    elif updates[0] == colorfullness_deviance:
+        return_information['colorfullness'] = [182.5665, feature_list['colorfullness'], 'Not colorful enough of an advertisement']
+    elif updates[0] == text_len_deviance:
+        return_information['text_len'] = [83, feature_list['text_len_deviance'], 'Not enough text on the advertimsnt']
+    elif updates[0] == word_len_deviance:
+        return_information['word_len'] = [5.211, feature_list['word_len_deviance'], 'Not enough text on the advertimsnt']
+    if updates[1] == edge_deviance:
+        return_information['edges'] = [600, feature_list['edges'], 'Too many plane pieces in the advertisement']
+    elif updates[1] == colorfullness_deviance:
+        return_information['colorfullness'] = [182.5665, feature_list['colorfullness'], 'Not colorful enough of an advertisement']
+    elif updates[1] == text_len_deviance:
+        return_information['text_len'] = [83, feature_list['text_len_deviance'], 'Not enough text on the advertimsnt']
+    elif updates[1] == word_len_deviance:
+        return_information['word_len'] = [5.211, feature_list['word_len_deviance'], 'Not enough text on the advertimsnt']
+
+        return return_information
 
 """
     Purpose: Grades customers advertisement specific to provided effect
@@ -145,13 +178,13 @@ def top_improvements(feature_list):
 def classify_effect(score):
     specific_score = int(score[0])
 
-    if specific_score < 50:
+    if specific_score < -1000:
         return 'Terrible'
-    elif specific_score < 100:
+    elif specific_score < 50:
         return 'Poor'
-    elif specific_score < 150:
-        return 'Fair'
     elif specific_score < 500:
+        return 'Fair'
+    elif specific_score < 2000:
         return 'Good'
     elif specific_score < 5000:
         return 'Amazing'
