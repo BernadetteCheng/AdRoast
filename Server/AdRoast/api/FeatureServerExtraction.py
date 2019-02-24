@@ -156,7 +156,7 @@ def top_improvements(feature_list):
     updates = [deviances[0], deviances[1]]
     print("[0]: " + updates[0])
     print("[1]: " + updates[1])
-""    return_information = {}
+    return_information = {}
 
     if updates[0] == edge_deviance:
         return_information['edges'] = [600, feature_list['edges'], 'Too many plane pieces in the advertisement']
