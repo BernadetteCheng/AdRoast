@@ -173,8 +173,8 @@ def top_improvements(feature_list):
     elif updates[1] == word_len_deviance:
         return_information['word_len'] = [5.211, feature_list['word_len'], 'Not enough text on the advertisement']
 
-        print("Returning: " + str(return_information))
-        return return_information
+    print("Returning: " + str(return_information))
+    return return_information
 
 """
     Purpose: Grades customers advertisement specific to provided effect
