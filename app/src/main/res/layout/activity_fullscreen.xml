@@ -51,31 +51,36 @@
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="250dp"
             android:layout_height="60dp"
-            android:layout_marginStart="116dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="268dp"
+            android:layout_marginBottom="8dp"
             android:text="@string/make_an_account"
             android:textColor="#696969"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.806"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView5"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.26" />
 
         <ImageButton
             android:id="@+id/imageButton"
             android:layout_width="57dp"
             android:layout_height="61dp"
-            android:layout_marginTop="400dp"
-            android:layout_marginEnd="280dp"
-            android:layout_marginRight="280dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:background="#00000000"
             android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.124"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.683"
             app:srcCompat="@drawable/ic_add_foreground" />
 
         <Button
@@ -85,7 +90,7 @@
             android:layout_height="60dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="176dp"
+            android:layout_marginBottom="8dp"
             android:text="@string/sign_in_with_google"
             android:textColor="#696969"
             android:textSize="20sp"
@@ -93,18 +98,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/button"
-            app:layout_constraintTop_toBottomOf="@+id/button" />
+            app:layout_constraintTop_toBottomOf="@+id/button"
+            app:layout_constraintVertical_bias="0.258" />
 
         <ImageButton
             android:id="@+id/imageButton3"
             android:layout_width="111dp"
             android:layout_height="108dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="460dp"
             android:layout_marginEnd="252dp"
-            android:layout_marginRight="252dp"
+            android:layout_marginBottom="8dp"
             android:background="#00000000"
             android:contentDescription="@string/todo"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_email_black_24dp" />
 

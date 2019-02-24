@@ -51,9 +51,10 @@ public class confirm extends AppCompatActivity {
             public void onClick(View v) {
                 String b64img = Base64.encodeToString(imgByteArray, Base64.DEFAULT);
                 RESTCalls.postImg rc = new RESTCalls.postImg();
-                post(b64img);
-                //Log.d("ans",r);
+                r=post(b64img);
+                Log.d("ans",r);
                 Intent intent = new Intent(confirm.this, response.class);
+                intent.putExtra("Response",r);
                 startActivity(intent);
             }
         });
@@ -73,7 +74,7 @@ public class confirm extends AppCompatActivity {
             startActivity(intent);
         }
     }
-    public void post(final String image) {
+    public String post(final String image) {
         AsyncTask<String, String, String> postImgTask =
                 new AsyncTask<String, String, String>() {
                     String exceptionMessage = "";
@@ -96,6 +97,7 @@ public class confirm extends AppCompatActivity {
                         } catch (Exception e) {
                             Log.d("InputStream", e.toString());
                         }
+                        Log.d("result",result);
                         return result;
                     }
 
@@ -117,8 +119,15 @@ public class confirm extends AppCompatActivity {
                     }
                 };
         postImgTask.execute(image);
+        try {
+            return postImgTask.get();
+        }
+        catch (Exception e){
+            Log.d("Error in return get",e.toString());
+        }
+        return null;
     }
     public void give(String ra){
-        r=ra;
+        this.r=ra;
     }
 }
