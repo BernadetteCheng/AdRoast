@@ -148,6 +148,8 @@ def top_improvements(feature_list):
     word_len_deviance = (feature_list['word_len'] - feature_median['word_len'])/feature_median['word_len']
 
     deviances = [edge_deviance, colorfullness_deviance, text_len_deviance, word_len_deviance]
+    print("Test-1: " + str(deviances))
+
     deviances = deviances.sort(reverse=True)
 
     print("Test: " + str(deviances))
