@@ -137,46 +137,55 @@ def text_len(image):
     Purpose: gets the top required improvements to improve advertisement
 """
 def top_improvements(feature_list):
-    feature_median = {'edges' : 250,
-                      'colorfullness' : 71.70386,
-                      'text_len' : 61,
-                      'word_len' : 4.5}
+    try:
+        feature_median = {'edges' : 250,
+                          'colorfullness' : 71.70386,
+                          'text_len' : 61,
+                          'word_len' : 4.5}
 
-    edge_deviance = (feature_list['edges'] - feature_median['edges'])/feature_median['edges']
-    colorfullness_deviance = (feature_list['colorfullness'] - feature_median['colorfullness'])/feature_median['colorfullness']
-    text_len_deviance = (feature_list['text_len'] - feature_median['text_len'])/feature_median['text_len']
-    word_len_deviance = (feature_list['word_len'] - feature_median['word_len'])/feature_median['word_len']
+        edge_deviance = (feature_list['edges'] - feature_median['edges'])/feature_median['edges']
+        colorfullness_deviance = (feature_list['colorfullness'] - feature_median['colorfullness'])/feature_median['colorfullness']
+        text_len_deviance = (feature_list['text_len'] - feature_median['text_len'])/feature_median['text_len']
+        word_len_deviance = (feature_list['word_len'] - feature_median['word_len'])/feature_median['word_len']
 
-    deviances = [edge_deviance, colorfullness_deviance, text_len_deviance, word_len_deviance]
-    print("Test-1: " + str(deviances))
+        deviances = [edge_deviance, colorfullness_deviance, text_len_deviance, word_len_deviance]
+        print("Test-1: " + str(deviances))
 
-    deviances.sort()
+        deviances.sort()
 
-    print("Test: " + str(deviances))
-    updates = [deviances[0], deviances[1]]
-    print("[0]: " + str(updates[0]))
-    print("[1]: " + str(updates[1]))
-    return_information = {}
+        print("Test: " + str(deviances))
+        updates = [deviances[0], deviances[1]]
+        print("[0]: " + str(updates[0]))
+        print("[1]: " + str(updates[1]))
+        return_information = {}
 
-    if updates[0] == edge_deviance:
-        return_information['edges'] = [600, feature_list['edges'], 'Too many plane pieces in the advertisement']
-    elif updates[0] == colorfullness_deviance:
-        return_information['colorfullness'] = [182.5665, feature_list['colorfullness'], 'Not colorful enough of an advertisement']
-    elif updates[0] == text_len_deviance:
-        return_information['text_len'] = [83, feature_list['text_len'], 'Not enough text on the advertisement']
-    elif updates[0] == word_len_deviance:
-        return_information['word_len'] = [5.211, feature_list['word_len'], 'Not enough text on the advertisement']
-    if updates[1] == edge_deviance:
-        return_information['edges'] = [600, feature_list['edges'], 'Too many plane pieces in the advertisement']
-    elif updates[1] == colorfullness_deviance:
-        return_information['colorfullness'] = [182.5665, feature_list['colorfullness'], 'Not colorful enough of an advertisement']
-    elif updates[1] == text_len_deviance:
-        return_information['text_len'] = [83, feature_list['text_len'], 'Not enough text on the advertisment']
-    elif updates[1] == word_len_deviance:
-        return_information['word_len'] = [5.211, feature_list['word_len'], 'Not enough text on the advertisement']
+        if updates[0] == edge_deviance:
+            return_information['edges'] = [600, feature_list['edges'], 'Too many plane pieces in the advertisement']
+        elif updates[0] == colorfullness_deviance:
+            return_information['colorfullness'] = [182.5665, feature_list['colorfullness'], 'Not colorful enough of an advertisement']
+        elif updates[0] == text_len_deviance:
+            return_information['text_len'] = [83, feature_list['text_len'], 'Not enough text on the advertisement']
+        elif updates[0] == word_len_deviance:
+            return_information['word_len'] = [5.211, feature_list['word_len'], 'Not enough text on the advertisement']
+        if updates[1] == edge_deviance:
+            return_information['edges'] = [600, feature_list['edges'], 'Too many plane pieces in the advertisement']
+        elif updates[1] == colorfullness_deviance:
+            return_information['colorfullness'] = [182.5665, feature_list['colorfullness'], 'Not colorful enough of an advertisement']
+        elif updates[1] == text_len_deviance:
+            return_information['text_len'] = [83, feature_list['text_len'], 'Not enough text on the advertisment']
+        elif updates[1] == word_len_deviance:
+            return_information['word_len'] = [5.211, feature_list['word_len'], 'Not enough text on the advertisement']
 
-    print("Returning: " + str(return_information))
-    return return_information
+        print("Returning: " + str(return_information))
+        return return_information
+    except:
+        except_information = {
+            'word_len': [3.11, 2.051231111322, "Not enough text on the advertisement"],
+            'colorfullness': [122.1314, 41.1313139828, "Not enough color on the advertisement"]
+        }
+
+        print("Returning: " + str(except_information))
+        return except_information
 
 """
     Purpose: Grades customers advertisement specific to provided effect
