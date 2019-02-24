@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('#img_upload_button').click({
+  $('#img_upload_button').click(){
     console.log("click");
     jQuery.noConflict();
     formdata = new FormData();
@@ -20,5 +20,5 @@ $(document).ready(function() {
           }
         })
       }
-  });
+  };
 });
