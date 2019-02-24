@@ -1,6 +1,6 @@
 (function($) {
   $img_form = $("#img_upload"),
-  $upload_button = $("#img_upload_button")
+  $upload_button = $("#img_upload_button");
 
   $upload_button.onClick({
     console.log("click");
@@ -24,6 +24,6 @@
             }
         });
       }
-    })
     */
+    })
 })(jQuery);
