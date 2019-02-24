@@ -8,7 +8,7 @@ import pickle
 import pandas as pd
 import numpy as np
 import scipy
-import sklearn
+from sklearn import ensemble
 from scipy import stats
 
 MODEL_PATH = 'static/adroast_model.sav'
