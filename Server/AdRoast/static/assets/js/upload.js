@@ -4,7 +4,7 @@ $(document).ready(function() {
     jQuery.noConflict();
     formdata = new FormData();
     var $img_data = document.getElementById('img_upload'),
-        file = $img_data.files[0];
+        file = $img_data.prop('files');
     if (formdata) {
         formdata.append("image", file);
         $.ajax({
