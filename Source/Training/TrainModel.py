@@ -44,5 +44,4 @@ class Train:
         print(accuracy_score(y_test, y_pred, normalize=True))
 
         filename = 'adroast_model.sav'
-        pickle.dump(gradient_boosting_classifier, open(filename, 'wb'))
-
+        pickle.dump(gradient_boosting_classifier, open(filename, 'wb'), protocol=pickle.HIGHEST_PROTOCOL)
