@@ -20,7 +20,7 @@ def analysisPOST(request):
         """return JsonResponse(data)"""
         print('P1')
         print('1:' + result[0])
-        print('2:' + result[1][0])
+        print('2:' + result[1])
         print('3:' + str(result[2]))
         result = extract_feature("P2.jpg")
         data = {
@@ -31,7 +31,7 @@ def analysisPOST(request):
 
         print('P2')
         print('1:' + result[0])
-        print('2:' + result[1][0])
+        print('2:' + result[1])
         print('3:' + str(result[2]))
 
         result = extract_feature("P3.jpg")
@@ -42,7 +42,7 @@ def analysisPOST(request):
         }
         print('P3')
         print('1:' + result[0])
-        print('2:' + result[1][0])
+        print('2:' + result[1])
         print('3:' + str(result[2]))
 
         result = extract_feature("P4.jpg")
@@ -53,7 +53,7 @@ def analysisPOST(request):
         }
         print('P4')
         print('1:' + result[0])
-        print('2:' + result[1][0])
+        print('2:' + result[1])
         print('3:' + str(result[2]))
 
         result = extract_feature("P5.jpg")
@@ -64,7 +64,7 @@ def analysisPOST(request):
         }
         print('P5')
         print('1:' + result[0])
-        print('2:' + result[1][0])
+        print('2:' + result[1])
         print('3:' + str(result[2]))
     else:
         data = {
