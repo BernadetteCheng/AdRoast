@@ -18,7 +18,7 @@ def analysisPOST(request):
             'score': result[2]
         }
         print('1:' + result[0])
-        print('2:' + result[1])
+        print('2:' + result[1][0])
         print('3:' + result[2])
     else:
         data = {
