@@ -35,7 +35,7 @@ def extract_feature(filepath):
     feature_set['b_kurtosis'] = feature_analysis[10]
     feature_set['b_skewness'] = feature_analysis[11]
 
-    prediction_features = pd.DataFrame.from_dict(feature_set, index=[0])
+    prediction_features = pd.DataFrame.(feature_set, index=[0])
 
     adroast_model = pickle.load(open(MODEL_PATH, 'rb'))
     score = adroast_model.predict(prediction_features)
