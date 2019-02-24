@@ -8,6 +8,7 @@ import pickle
 import pandas as pd
 import numpy as np
 import scipy
+import pytesseract
 from scipy import stats
 
 MODEL_PATH = 'static/adroast_model.sav'
@@ -22,6 +23,8 @@ def extract_feature(filepath):
 
     feature_set['colorfullness'] = image_colorfulness(ad_image)
     feature_set['edges'] = harris_corner_detection(ad_image)
+    feature_set['text_len'] = text_len(ad_image)
+    feature_set['word_len'] = word_len(ad_image)
 
     feature_analysis = rgb_hist_analysis(ad_image)
 
@@ -38,16 +41,14 @@ def extract_feature(filepath):
     feature_set['b_kurtosis'] = feature_analysis[10]
     feature_set['b_skewness'] = feature_analysis[11]
 
+    improvements = top_improvements(feature_set)
+
     prediction_features = pd.DataFrame(feature_set, index=[0])
 
     adroast_model = pickle.load(open(MODEL_PATH, 'rb'))
     score = adroast_model.predict(prediction_features)
 
-    print(score)
-
     grade = classify_effect(score)
-    improvements = ['FIX UR ADS']
-
     return [grade, improvements, score[0]]
 
 """
@@ -76,7 +77,7 @@ def harris_corner_detection(image):
     gray_component = np.float32(gray_component)
     destination = cv2.cornerHarris(gray_component, 2, 3, 0.04)
 
-    return len(destination)
+    return int(destination)
 
 """
     Purpose: Analyzes specific components of the rgb_histogram
@@ -112,18 +113,45 @@ def rgb_hist(image):
     return(rgb_histograms)
 
 """
+     Purpose: Gets average length of a single word
+"""
+def word_len(image):
+    try:
+        text = pytesseract.image_to_string(image)
+        words = text.split()
+        return sum(len(word) for word in words) / len(words)
+    except:
+        return 0
+
+"""
+     Purpose: Gets average length of an images text
+"""
+def text_len(image):
+    try:
+        text = pytesseract.image_to_string(image)
+        return len(text)
+    except:
+        return 0
+
+"""
+    Purpose: gets the top required improvements to improve advertisement
+"""
+def top_improvements(feature_list):
+    return 0
+
+"""
     Purpose: Grades customers advertisement specific to provided effect
 """
 def classify_effect(score):
     specific_score = int(score[0])
 
-    if specific_score < 10:
+    if specific_score < 50:
         return 'Terrible'
-    elif specific_score < 80:
+    elif specific_score < 100:
         return 'Poor'
-    elif specific_score < 220:
+    elif specific_score < 150:
         return 'Fair'
-    elif specific_score < 1200:
+    elif specific_score < 500:
         return 'Good'
     elif specific_score < 5000:
         return 'Amazing'
