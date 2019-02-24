@@ -161,17 +161,17 @@ def top_improvements(feature_list):
     elif updates[0] == colorfullness_deviance:
         return_information['colorfullness'] = [182.5665, feature_list['colorfullness'], 'Not colorful enough of an advertisement']
     elif updates[0] == text_len_deviance:
-        return_information['text_len'] = [83, feature_list['text_len_deviance'], 'Not enough text on the advertimsnt']
+        return_information['text_len'] = [83, feature_list['text_len'], 'Not enough text on the advertisement']
     elif updates[0] == word_len_deviance:
-        return_information['word_len'] = [5.211, feature_list['word_len_deviance'], 'Not enough text on the advertimsnt']
+        return_information['word_len'] = [5.211, feature_list['word_len'], 'Not enough text on the advertisement']
     if updates[1] == edge_deviance:
         return_information['edges'] = [600, feature_list['edges'], 'Too many plane pieces in the advertisement']
     elif updates[1] == colorfullness_deviance:
         return_information['colorfullness'] = [182.5665, feature_list['colorfullness'], 'Not colorful enough of an advertisement']
     elif updates[1] == text_len_deviance:
-        return_information['text_len'] = [83, feature_list['text_len_deviance'], 'Not enough text on the advertimsnt']
+        return_information['text_len'] = [83, feature_list['text_len'], 'Not enough text on the advertisment']
     elif updates[1] == word_len_deviance:
-        return_information['word_len'] = [5.211, feature_list['word_len_deviance'], 'Not enough text on the advertimsnt']
+        return_information['word_len'] = [5.211, feature_list['word_len'], 'Not enough text on the advertisement']
 
         return return_information
 
