@@ -13,7 +13,7 @@ def analysisPOST(request):
             fh.write(base64.decodebytes(request.body))
         result = extract_feature("parsedImage.jpg")
         data = {
-            'grade': str(result[0]),)
+            'grade': str(result[0]))
         }
         return JsonResponse(data)
         """
