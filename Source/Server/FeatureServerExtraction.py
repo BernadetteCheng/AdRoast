@@ -10,8 +10,11 @@ import numpy as np
 import scipy
 from scipy import stats
 
-MODEL_PATH = ''
-effectiveness_classification = {}
+MODEL_PATH = 'adroast_model.sav'
+
+def main():
+    extract_feature('52712850_2504348282972736_2536715282538299392_n.png')
+
 
 def extract_feature(filepath):
     ad_image = cv2.imread(filepath, cv2.COLOR_BGR2RGB)
@@ -35,10 +38,15 @@ def extract_feature(filepath):
     feature_set['b_kurtosis'] = feature_analysis[10]
     feature_set['b_skewness'] = feature_analysis[11]
 
-    prediction_features = pd.DataFrame.from_dict(feature_set)
+    for feature in feature_set:
+        print(str(feature_set[feature]))
+
+    prediction_features = pd.DataFrame(feature_set, index=[0])
 
     adroast_model = pickle.load(open(MODEL_PATH, 'rb'))
     score = adroast_model.predict(prediction_features)
+
+    print(score)
 
     grade = classify_effect(score)
     improvements = ['FIX UR ADS']
@@ -48,7 +56,6 @@ def extract_feature(filepath):
 """
     Purpose: Determines colorfulness feature of ad image
 """
-@staticmethod
 def image_colorfulness(image):
     (R,G,B) = cv2.split(image.astype('float'))
     RG = np.absolute(R - G)
@@ -66,7 +73,6 @@ def image_colorfulness(image):
 """
     Purpose: Provides the number of edges that were observed in the ad
 """
-@staticmethod
 def harris_corner_detection(image):
     gray_component = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
@@ -79,7 +85,6 @@ def harris_corner_detection(image):
 """
     Purpose: Analyzes specific components of the rgb_histogram
 """
-@staticmethod
 def rgb_hist_analysis(image):
     specific_amounts = []
     histograms = rgb_hist(image)
@@ -100,7 +105,6 @@ def rgb_hist_analysis(image):
 """
     Purpose: Analyzes the RGB Histogram of an advertisement
 """
-@staticmethod
 def rgb_hist(image):
     colour = ('b', 'g', 'r')
     rgb_histograms = []
@@ -114,7 +118,6 @@ def rgb_hist(image):
 """
     Purpose: Grades customers advertisement specific to provided effect
 """
-@staticmethod
 def classify_effect(score):
     specific_score = int(score[0])
 
@@ -130,3 +133,6 @@ def classify_effect(score):
         return 'Amazing'
     else:
         return 'Superb'
+
+if __name__ == "__main__":
+    main()
