@@ -21,7 +21,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:text="@string/adroast"
-            android:textColor="#ffffff"
+            android:textColor="#3e3e3e"
             android:textSize="10sp"
             app:fontFamily="@font/miriam_libre"
             app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@mipmap/ic_logo_foreground" />
+            app:srcCompat="@mipmap/ic_flame_foreground" />
 
         <TextView
             android:id="@+id/textView3"
@@ -55,7 +55,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:text="@string/molly_s_mops_inc"
-            android:textColor="#ffffff"
+            android:textColor="#3e3e3e"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -72,11 +72,11 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:autofillHints=""
-            android:backgroundTint="@android:color/background_light"
+            android:backgroundTint="@android:color/background_dark"
             android:ems="10"
             android:inputType="textMultiLine"
             android:text="Sells the best mops in the world. Wants the world to notice her by her mops. Religiously bonded to her business and want to share her love of maps with the world. Long live mops."
-            android:textColor="#ffffff"
+            android:textColor="#3e3e3e"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -87,9 +87,9 @@
             android:layout_width="293dp"
             android:layout_height="36dp"
             android:layout_marginBottom="240dp"
-            android:text="<mop> <clean> <love> <home>"
+            android:text="&lt;mop&gt; &lt;clean&gt; &lt;love&gt; &lt;home&gt;"
             android:textAlignment="center"
-            android:textColor="#ffffff"
+            android:textColor="#3e3e3e"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/editText6"
@@ -118,7 +118,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:text="View History"
-            android:textColor="#ffffff"
+            android:textColor="#3e3e3e"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -126,8 +126,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="160dp"
-            android:layout_height="159dp"
+            android:layout_width="207dp"
+            android:layout_height="188dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="100dp"
@@ -137,7 +137,7 @@
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/ic_molly_foreground" />
+            app:srcCompat="@mipmap/ic_mops_foreground" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -152,7 +152,7 @@
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageView"
-            app:srcCompat="@mipmap/ic_rank_foreground" />
+            app:srcCompat="@mipmap/ic_fair_foreground" />
 
         <TextView
             android:id="@+id/textView8"
@@ -164,7 +164,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="188dp"
             android:text="-"
-            android:textColor="#ffffff"
+            android:textColor="#3e3e3e"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/button4"
             app:layout_constraintEnd_toEndOf="parent"

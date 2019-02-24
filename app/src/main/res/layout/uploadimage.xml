@@ -21,7 +21,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:text="@string/adroast"
-            android:textColor="#ffffff"
+            android:textColor="#3e3e3e"
             android:textSize="10sp"
             app:fontFamily="@font/miriam_libre"
             app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@mipmap/ic_logo_foreground" />
+            app:srcCompat="@mipmap/ic_flame_foreground" />
 
         <ImageButton
             android:id="@+id/imageButton5"
@@ -115,7 +115,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
             android:text="@string/or"
-            android:textColor="#ffffff"
+            android:textColor="#3e3e3e"
             android:textSize="37sp"
             app:layout_constraintBottom_toTopOf="@+id/imageButton9"
             app:layout_constraintEnd_toEndOf="parent"
@@ -134,7 +134,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
             android:text="@string/upload_image"
-            android:textColor="#ffffff"
+            android:textColor="#3e3e3e"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/textView6"
             app:layout_constraintEnd_toEndOf="parent"
@@ -154,7 +154,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
             android:text="@string/take_picture"
-            android:textColor="#ffffff"
+            android:textColor="#3e3e3e"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/imageButton8"
             app:layout_constraintEnd_toEndOf="parent"

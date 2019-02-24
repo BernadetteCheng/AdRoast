@@ -7,9 +7,6 @@
     <string name="make_an_account">Make An Account</string>
     <string name="sign_in_with_google">Sign in with Google</string>
     <string name="todo">TODO</string>
-    <string name="todo">TODO</string>
-    <string name="todo">TODO</string>
-    <string name="todo">TODO</string>
 
     <string name="title_activity_user_profile">UserProfile</string>
     <string name="company_name">Company Name</string>
@@ -17,13 +14,7 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="sign_up">Sign Up</string>
-    <string name="todo">TODO</string>
     <string name="string_todo" />
-    <string name="todo">TODO</string>
-    <string name="todo">TODO</string>
-    <string name="todo">TODO</string>
-    <string name="todo">TODO</string>
-    <string name="todo">TODO</string>
     <string name="take_picture">TAKE PICTURE</string>
     <string name="upload_image">UPLOAD IMAGE</string>
     <string name="or">OR</string>
@@ -32,19 +23,6 @@
     <string name="dash">-</string>
     <string name="view_history">View History</string>
     <string name="test_ad">Test Ad</string>
-    <string name="mop_clean_love_home"><![CDATA[<mop> <clean> <love> <home>]]></string>
-    <string name="todo">TODO</string>
-    <string name="todo">TODO</string>
-    <string name="company_name">Company Name</string>
-    <string name="username">Username</string>
-    <string name="email">Email</string>
-    <string name="mop_clean_love_home"><![CDATA[<mop> <clean> <love> <home>]]></string>
-    <string name="test_ad">Test Ad</string>
-    <string name="view_history">View History</string>
-    <string name="dash">-</string>
-    <string name="todo">TODO</string>
-    <string name="todo">TODO</string>
-    <string name="adroast">AdRoast</string>
     <string name="adroast">AdRoast</string>
     <string name="take_another">Take Another</string>
     <string name="confirm">Confirm</string>

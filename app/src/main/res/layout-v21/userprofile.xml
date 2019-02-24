@@ -43,7 +43,7 @@ tools:context=".FullscreenActivity">
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@mipmap/ic_logo_foreground" />
+            app:srcCompat="@mipmap/ic_flame_foreground" />
 
         <EditText
             android:id="@+id/editText2"
