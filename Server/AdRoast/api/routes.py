@@ -19,7 +19,7 @@ def analysisPOST(request):
         }
         print('1:' + result[0])
         print('2:' + result[1][0])
-        print('3:' + result[2])
+        print('3:' + str(result[2]))
     else:
         data = {
             'response': 'Not a POST request'
