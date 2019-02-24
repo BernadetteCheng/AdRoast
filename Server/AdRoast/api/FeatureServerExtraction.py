@@ -154,8 +154,8 @@ def top_improvements(feature_list):
 
     print("Test: " + str(deviances))
     updates = [deviances[0], deviances[1]]
-    print("[0]: " + updates[0])
-    print("[1]: " + updates[1])
+    print("[0]: " + str(updates[0]))
+    print("[1]: " + str(updates[1]))
     return_information = {}
 
     if updates[0] == edge_deviance:
