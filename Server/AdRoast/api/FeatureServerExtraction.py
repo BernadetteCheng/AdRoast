@@ -10,7 +10,7 @@ import numpy as np
 import scipy
 from scipy import stats
 
-MODEL_PATH = 'static/adroast_model.sav'
+MODEL_PATH = 'adroast_model.sav'
 
 def main():
     extract_feature('52712850_2504348282972736_2536715282538299392_n.png')
@@ -37,9 +37,6 @@ def extract_feature(filepath):
     feature_set['b_variance'] = feature_analysis[9]
     feature_set['b_kurtosis'] = feature_analysis[10]
     feature_set['b_skewness'] = feature_analysis[11]
-
-    for feature in feature_set:
-        print(str(feature_set[feature]))
 
     prediction_features = pd.DataFrame(feature_set, index=[0])
 
@@ -78,9 +75,8 @@ def harris_corner_detection(image):
 
     gray_component = np.float32(gray_component)
     destination = cv2.cornerHarris(gray_component, 2, 3, 0.04)
-    destination = cv2.dilate(destination, None)
 
-    return len(destination)
+    return int(destination)
 
 """
     Purpose: Analyzes specific components of the rgb_histogram

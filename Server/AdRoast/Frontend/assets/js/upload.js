@@ -14,7 +14,12 @@
             data: formdata,
             processData: false,
             contentType: false,
-            success:function(){}
+            success:function(res){
+              console.log('haha');
+            },
+            failure:function(e){
+              console.log('oof');
+            }
         });
     }
   })
