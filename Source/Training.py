@@ -11,11 +11,13 @@ def main():
     data_analysis = an()
     model_training = tr()
 
-    an.import_csv(data_analysis, 'C:\\Users\\Taha Masood\\Desktop\\AdRoast\\Source\\Training\\FinalCompleteTrain.csv', 'train')
+    an.import_csv(data_analysis, 'C:\\Users\\Taha Masood\\Desktop\\AdRoast\\Source\\Training\\FinalTrain.csv', 'train')
     train_df = an.get_df(data_analysis, 'train')
 
     input_features = train_df[['colorfullness',
                                'edges',
+                               'text_len',
+                               'word_len',
                                'r_mean',
                                'r_variance',
                                'r_kurtosis',

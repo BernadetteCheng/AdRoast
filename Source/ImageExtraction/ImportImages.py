@@ -8,12 +8,16 @@ import cv2
 import numpy as np
 import scipy
 from scipy import stats
+import pytesseract
+import imutils
 from scipy.misc import imread
 import random
 import os
 from PIL import Image as im
 import matplotlib.pyplot as plt
+import argparse
 
+pytesseract.pytesseract.tesseract_cmd = 'C:\\Program Files (x86)\\Tesseract-OCR\\tesseract.exe'
 
 class Images:
 
@@ -197,6 +201,8 @@ class Images:
         final_df['b_variance'] = final_df.apply(self.bvar, axis=1)
         final_df['b_kurtosis'] = final_df.apply(self.bkurtosis, axis=1)
         final_df['b_skewness'] = final_df.apply(self.bskew, axis=1)
+        final_df['text_len'] = final_df.apply(self.textlen, axis=1)
+        final_df['word_len'] = final_df.apply(self.wordlen, axis=1)
 
         return final_df
 
@@ -312,5 +318,51 @@ class Images:
     def bskew(self, row):
         try:
             return self.rgb_hist_analysis(row.id)[11]
+        except:
+            print('Exception')
+
+    """
+        Purpose: Gets length of text pulled from image
+    """
+    def textlen(self, row):
+        try:
+            return len(self.image_ocr_analysis(row.id))
+        except:
+            return 0
+
+    """
+        Purpose: Gets average length of a single word
+    """
+    def wordlen(self, row):
+        try:
+            sentence = self.image_ocr_analysis(row.id)
+            words = sentence.split()
+            return sum(len(word) for word in words) / len(words)
+        except:
+            return 0
+
+    """
+        Name: text_analysis
+        Purpose: Provides textual analysis on the image
+    """
+    def text_analysis(self, image_name):
+        assert self.exists_image(image_name), 'Dataset does not exist!'
+        img = cv2.cvtColor(self.images[image_name], cv2.COLOR_BGR2GRAY)
+        kernel = np.ones((1, 1), np.uint8)
+        img = cv2.dilate(img, kernel, iterations=1)
+        img = cv2.erode(img, kernel, iterations=1)
+        img = cv2.GaussianBlur(img, (5, 5), 0)
+
+        return pytesseract.image_to_string(img)
+
+    """
+        Purpose: Conducts necessary feature extraction on 
+    """
+    def image_ocr_analysis(self, image_name):
+        assert self.exists_image(self, image_name), 'Dataset does not exist!'
+
+        try:
+            text = pytesseract.image_to_string(self.images[image_name])
+            return(text)
         except:
             print('Exception')

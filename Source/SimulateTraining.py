@@ -10,12 +10,13 @@ def main():
     image_analysis = im()
     data_analysis = an()
 
-    an.import_csv(data_analysis, 'C:\\Users\\Taha Masood\\Desktop\\AdRoast\\Source\\Data\\GoogleData\\clean_final.csv', 'clean')
+    an.import_csv(data_analysis, 'C:\\Users\\Taha Masood\\Desktop\\AdRoast\\Source\\Training\\FinalCompleteTrain.csv', 'clean')
     final_df = an.get_df(data_analysis, 'clean')
 
     for row in final_df.itertuples():
         image_path = 'Images\\' + row[2] + '.jpg'
         im.import_image(image_analysis, image_path, row[2])
+        im.image_ocr_analysis(image_analysis, row[2])
 
     final_df = final_df[['id', 'effect']]
     final_df = im.grab_features(image_analysis, final_df)
