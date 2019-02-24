@@ -150,7 +150,7 @@ def top_improvements(feature_list):
     deviances = [edge_deviance, colorfullness_deviance, text_len_deviance, word_len_deviance]
     print("Test-1: " + str(deviances))
 
-    deviances = deviances.sort(reverse=True)
+    deviances = deviances.sort()
 
     print("Test: " + str(deviances))
     updates = [deviances[0], deviances[1]]
