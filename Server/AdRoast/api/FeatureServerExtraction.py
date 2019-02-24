@@ -48,7 +48,6 @@ def extract_feature(filepath):
 """
     Purpose: Determines colorfulness feature of ad image
 """
-@staticmethod
 def image_colorfulness(image):
     (R,G,B) = cv2.split(image.astype('float'))
     RG = np.absolute(R - G)
@@ -66,7 +65,6 @@ def image_colorfulness(image):
 """
     Purpose: Provides the number of edges that were observed in the ad
 """
-@staticmethod
 def harris_corner_detection(image):
     gray_component = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
@@ -79,7 +77,6 @@ def harris_corner_detection(image):
 """
     Purpose: Analyzes specific components of the rgb_histogram
 """
-@staticmethod
 def rgb_hist_analysis(image):
     specific_amounts = []
     histograms = rgb_hist(image)
@@ -100,7 +97,6 @@ def rgb_hist_analysis(image):
 """
     Purpose: Analyzes the RGB Histogram of an advertisement
 """
-@staticmethod
 def rgb_hist(image):
     colour = ('b', 'g', 'r')
     rgb_histograms = []
@@ -114,7 +110,6 @@ def rgb_hist(image):
 """
     Purpose: Grades customers advertisement specific to provided effect
 """
-@staticmethod
 def classify_effect(score):
     specific_score = int(score[0])
 
