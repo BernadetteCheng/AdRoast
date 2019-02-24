@@ -11,6 +11,7 @@ from scipy import stats
 from scipy.misc import imread
 import random
 import os
+from PIL import Image as im
 import matplotlib.pyplot as plt
 
 
@@ -166,9 +167,9 @@ class Images:
 
         for histogram in histograms:
             mean = np.mean(histogram)
-            variance = np.var(histogram)
-            kurtosis = scipy.stats.kurtosis(histogram)
-            skewness = scipy.stats.skew(histogram)
+            variance = np.var(histogram) / mean
+            kurtosis = scipy.stats.kurtosis(histogram) / mean
+            skewness = scipy.stats.skew(histogram) / mean
 
             specific_amounts.append(float(mean))
             specific_amounts.append(float(variance))

@@ -38,9 +38,6 @@ def extract_feature(filepath):
     feature_set['b_kurtosis'] = feature_analysis[10]
     feature_set['b_skewness'] = feature_analysis[11]
 
-    for feature in feature_set:
-        print(str(feature_set[feature]))
-
     prediction_features = pd.DataFrame(feature_set, index=[0])
 
     adroast_model = pickle.load(open(MODEL_PATH, 'rb'))
@@ -78,9 +75,8 @@ def harris_corner_detection(image):
 
     gray_component = np.float32(gray_component)
     destination = cv2.cornerHarris(gray_component, 2, 3, 0.04)
-    destination = cv2.dilate(destination, None)
 
-    return len(destination)
+    return int(destination)
 
 """
     Purpose: Analyzes specific components of the rgb_histogram
