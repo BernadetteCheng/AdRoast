@@ -10,7 +10,7 @@ import numpy as np
 import scipy
 from scipy import stats
 
-MODEL_PATH = '/static/adroast_model.sav'
+MODEL_PATH = 'adroast_model.sav'
 effectiveness_classification = {}
 
 def extract_feature(filepath):
