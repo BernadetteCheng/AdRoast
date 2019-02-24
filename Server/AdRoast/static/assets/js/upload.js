@@ -3,7 +3,7 @@ $(document).ready(function() {
     console.log("click");
     jQuery.noConflict();
     formdata = new FormData();
-    var file = $('#img_upload').prop('files');
+    var file = $('#img_upload')[0].files[0];
     if (formdata) {
         formdata.append("image", file);
         $.ajax({
