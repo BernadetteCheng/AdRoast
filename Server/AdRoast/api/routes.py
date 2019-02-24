@@ -17,7 +17,9 @@ def analysisPOST(request):
             'improvements': result[1],
             'score': result[2]
         }
-        return JsonResponse(data)
+        print('1:' + result[0])
+        print('2:' + result[1])
+        print('3:' + result[2])
     else:
         data = {
             'response': 'Not a POST request'
