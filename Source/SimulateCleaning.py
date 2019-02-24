@@ -14,6 +14,8 @@ def main():
 
     initial_df = an.get_df(data_analysis, 'initial')
     current_df = an.get_df(data_analysis, 'current')
+    an.add_df(data_analysis, 'description', current_df.describe())
+    an.write_df(data_analysis, 'description', 'C:\\Users\\Taha Masood\\Desktop\\AdRoast\\Source\\Training\\Summary.csv')
 
     initial_df = initial_df.rename(columns={'Ad_ID' : 'id'})
 
