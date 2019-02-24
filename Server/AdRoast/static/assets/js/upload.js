@@ -2,7 +2,7 @@ $(document).ready(function() {
   var $img_form = $("#img_upload"),
       $upload_button = $("#img_upload_button");
 
-  $upload_button.onClick({
+  $upload_button.click({
     console.log("click");
     jQuery.noConflict();
     formdata = new FormData();
