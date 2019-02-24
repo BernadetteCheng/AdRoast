@@ -8,11 +8,13 @@ import pickle
 import pandas as pd
 import numpy as np
 import scipy
-import sklearn
 from scipy import stats
 
-MODEL_PATH = 'static/adroast_model.sav'
-effectiveness_classification = {}
+MODEL_PATH = 'adroast_model.sav'
+
+def main():
+    extract_feature('52712850_2504348282972736_2536715282538299392_n.png')
+
 
 def extract_feature(filepath):
     ad_image = cv2.imread(filepath, cv2.COLOR_BGR2RGB)
@@ -36,13 +38,15 @@ def extract_feature(filepath):
     feature_set['b_kurtosis'] = feature_analysis[10]
     feature_set['b_skewness'] = feature_analysis[11]
 
-    for entry in feature_set:
-        print(str(entry) + " : " + str(feature_set[entry]))
+    for feature in feature_set:
+        print(str(feature_set[feature]))
 
     prediction_features = pd.DataFrame(feature_set, index=[0])
 
     adroast_model = pickle.load(open(MODEL_PATH, 'rb'))
     score = adroast_model.predict(prediction_features)
+
+    print(score)
 
     grade = classify_effect(score)
     improvements = ['FIX UR ADS']
@@ -129,3 +133,6 @@ def classify_effect(score):
         return 'Amazing'
     else:
         return 'Superb'
+
+if __name__ == "__main__":
+    main()
