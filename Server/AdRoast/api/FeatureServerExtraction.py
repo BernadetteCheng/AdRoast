@@ -10,7 +10,7 @@ import numpy as np
 import scipy
 from scipy import stats
 
-MODEL_PATH = 'adroast_model.sav'
+MODEL_PATH = 'static/adroast_model.sav'
 
 def main():
     extract_feature('52712850_2504348282972736_2536715282538299392_n.png')
