@@ -21,7 +21,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:text="@string/adroast"
-            android:textColor="#ffffff"
+            android:textColor="#696969"
             android:textSize="10sp"
             app:fontFamily="@font/miriam_libre"
             app:layout_constraintEnd_toEndOf="parent"
@@ -43,32 +43,32 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@mipmap/ic_logo_foreground" />
+            app:srcCompat="@mipmap/ic_firelogo_foreground" />
 
         <ImageButton
             android:id="@+id/imageButton5"
             android:layout_width="160dp"
             android:layout_height="153dp"
             android:background="#00000000"
+            android:contentDescription="@string/todo"
             app:layout_constraintBottom_toBottomOf="@+id/button4i"
             app:layout_constraintEnd_toEndOf="@+id/button4i"
             app:layout_constraintHorizontal_bias="0.475"
             app:layout_constraintStart_toStartOf="@+id/button4i"
             app:layout_constraintTop_toTopOf="@+id/button4i"
-            app:srcCompat="@drawable/ic_upload_foreground"
-            android:contentDescription="@string/todo" />
+            app:srcCompat="@drawable/ic_upload_foreground" />
 
         <ImageButton
             android:id="@+id/imageButton8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="#00000000"
+            android:contentDescription="@string/todo"
             app:layout_constraintBottom_toBottomOf="@+id/button3i"
             app:layout_constraintEnd_toEndOf="@+id/button3i"
             app:layout_constraintStart_toStartOf="@+id/button3i"
             app:layout_constraintTop_toTopOf="@+id/button3i"
-            app:srcCompat="@drawable/ic_camera_foreground"
-            android:contentDescription="@string/todo" />
+            app:srcCompat="@drawable/ic_camera_foreground" />
 
         <ImageButton
             android:id="@+id/button3i"
@@ -80,12 +80,12 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="112dp"
             android:background="#00000000"
+            android:contentDescription="@string/todo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/ic_panorama_fish_eye_black_24dp"
-            android:contentDescription="@string/todo" />
+            app:srcCompat="@drawable/ic_panorama_fish_eye_black_24dp" />
 
         <Button
             android:id="@+id/button3"
@@ -115,12 +115,12 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:background="#00000000"
+            android:contentDescription="@string/todo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_panorama_fish_eye_black_24dp"
-            android:contentDescription="@string/todo" />
+            app:srcCompat="@drawable/ic_panorama_fish_eye_black_24dp" />
 
         <Button
             android:id="@+id/button4"
@@ -151,14 +151,13 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
             android:text="@string/or"
-            android:textColor="#ffffff"
+            android:textColor="#696969"
             android:textSize="37sp"
             app:layout_constraintBottom_toTopOf="@+id/button3i"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button4i" />
-
 
 
         <TextView
@@ -172,7 +171,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
             android:text="@string/upload_image"
-            android:textColor="#ffffff"
+            android:textColor="#696969"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/textView6"
             app:layout_constraintEnd_toEndOf="parent"
@@ -192,7 +191,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
             android:text="@string/take_picture"
-            android:textColor="#ffffff"
+            android:textColor="#696969"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/imageButton8"
             app:layout_constraintEnd_toEndOf="parent"

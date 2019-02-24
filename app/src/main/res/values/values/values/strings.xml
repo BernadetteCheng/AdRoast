@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Login</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="button">Button</string>
+    <string name="make_an_account">Make An Account</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="todo">TODO</string>
+
+
+    <string name="title_activity_user_profile">UserProfile</string>
+    <string name="company_name">Company Name</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="string_todo" />
+    <string name="take_picture">TAKE PICTURE</string>
+    <string name="upload_image">UPLOAD IMAGE</string>
+    <string name="or">OR</string>
+    <string name="molly_s_mops_inc">MOLLY\'S MOPS INC.</string>
+    <string name="sells_the_best_mops_in_the_world_wants_the_world_to_notice_her_by_her_mops_religiously_bonded_to_her_business_and_want_to_share_her_love_of_maps_with_the_world_long_live_mops">Sells the best mops in the world. Wants the world to notice her by her mops. Religiously bonded to her business and want to share her love of maps with the world. Long live mops.</string>
+    <string name="dash">-</string>
+    <string name="view_history">View History</string>
+    <string name="test_ad">Test Ad</string>
+    <string name="mop_clean_love_home"><![CDATA[<mop> <clean> <love> <home>]]></string>
+    <string name="adroast">AdRoast</string>
+    <string name="take_another">Take Another</string>
+    <string name="confirm">Confirm</string>
+</resources>

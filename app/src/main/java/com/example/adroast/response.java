@@ -7,7 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.LegendEntry;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
@@ -28,29 +31,39 @@ public class response extends AppCompatActivity {
         BarChart chart=(BarChart)findViewById(R.id.barChart);
 
         List<BarEntry> entries = new ArrayList<BarEntry>();
-        entries.add(new BarEntry(1,4));
-        entries.add(new BarEntry(2,20));
-        BarDataSet dataSet = new BarDataSet(entries, "Label");
-        dataSet.setColor(1,700);
-        dataSet.setValueTextColor(Color.BLUE);
+        entries.add(new BarEntry(0f,4));
+        entries.add(new BarEntry(1f,20));
+        BarDataSet dataSet = new BarDataSet(entries, "Comparison");
+        dataSet.setColors(new int[] {Color.RED, Color.GREEN});
+        dataSet.setValueTextColor(Color.WHITE);
         BarData barData = new BarData(dataSet);
+        barData.setBarWidth(0.9f);
         chart.setData(barData);
-        chart.setDrawGridBackground(false);
-        chart.setGridBackgroundColor(Color.WHITE);
+
         XAxis xAxis = chart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setTextSize(10f);
         xAxis.setTextColor(Color.WHITE);
         xAxis.setDrawAxisLine(true);
         xAxis.setDrawGridLines(false);
+
         YAxis left = chart.getAxisLeft();
-        
+        left.setTextSize(10f);
+        left.setTextColor(Color.WHITE);
         left.setDrawLabels(false);
-        left.setDrawAxisLine(false);
+        left.setDrawAxisLine(true);
         left.setDrawGridLines(false);
         left.setDrawZeroLine(true);
         chart.getAxisRight().setEnabled(false);
         left.setTextColor(Color.WHITE);
+
+        Legend legend = chart.getLegend();
+        legend.setTextColor(Color.WHITE);
+
+        chart.animateXY(4000,4000);
+        chart.setBackgroundColor(Color.WHITE);
+        chart.setDrawBarShadow(true);
+        chart.setFitBars(true);
         chart.invalidate();
 
         Button cont = (Button) findViewById(R.id.button7);
