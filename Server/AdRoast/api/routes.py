@@ -11,7 +11,7 @@ def analysisPOST(request):
     if request.method == 'POST':
         with open("parsedImage.png", "wb") as fh:
             fh.write(base64.decodebytes(request.body))
-        result = extract_feature("parsedImageTest.png")
+        result = extract_feature("parsedImage.png")
         data = {
             'grade': result[0],
             'improvements': result[1],
