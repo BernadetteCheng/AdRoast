@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup as bs
 import urllib.request as urllib
 from selenium.webdriver.common.by import By
 from selenium import webdriver
+import random
 
 class Analysis:
 
@@ -20,17 +21,17 @@ class Analysis:
     def __init__(self):
         self.datasets = {}
 
-        self.cost = {'100-1k' : 500,
-                     '≤ 100' : 50,
-                     '1k-50k' : 25000,
-                     '> 100k' : 150000,
-                     '50k-100k' : 75000}
+        self.cost = {'100-1k' : [100, 1000],
+                     '≤ 100' : [0, 100],
+                     '1k-50k' : [1000, 50000],
+                     '> 100k' : [100000, 10000000],
+                     '50k-100k' : [50000, 100000]}
 
-        self.impression = {'≤ 10k' : 5000,
-                           '10k-100k' : 50000,
-                           '100k-1M' : 500000,
-                           '1M-10M' : 5000000,
-                           '> 10M' : 10000000}
+        self.impression = {'≤ 10k' : [0, 10000],
+                           '10k-100k' : [10000, 100000],
+                           '100k-1M' : [100000, 1000000],
+                           '1M-10M' : [1000000, 10000000],
+                           '> 10M' : [10000000, 1000000000]}
 
     """
         Purpose: Indicates if dataset already exists
@@ -94,27 +95,45 @@ class Analysis:
         self.datasets[data_name]['cost'] = self.datasets[data_name].apply(self.costs, axis=1)
         self.datasets[data_name]['impression'] = self.datasets[data_name].apply(self.impressions, axis=1)
         self.datasets[data_name]['effect'] = self.datasets[data_name]['impression'] / self.datasets[data_name]['cost']
-        self.datasets[data_name] = self.datasets[data_name][['Ad_ID',
-                                                             'Ad_URL',
-                                                             'Ad_Type',
-                                                             'cost',
-                                                             'impression',
-                                                             'effect']]
+        #self.datasets[data_name] = self.datasets[data_name][['Ad_ID',
+        #                                                     'Ad_URL',
+        #                                                     'Ad_Type',
+        #                                                     'cost',
+        #                                                     'impression',
+        #                                                     'effect']]
 
-        self.datasets[data_name] = self.datasets[data_name].rename(columns={'Ad_ID' : 'id',
-                                                                            'Ad_URL' : 'url',
-                                                                            'Ad_Type' : 'type'})
+        #self.datasets[data_name] = self.datasets[data_name].rename(columns={'Ad_ID' : 'id',
+        #                                                                    'Ad_URL' : 'url',
+        #                                                                    'Ad_Type' : 'type'})
+
+        self.datasets[data_name] = self.datasets[data_name][['id',
+                                                             'effect',
+                                                             'colorfullness',
+                                                             'edges',
+                                                             'r_mean',
+                                                             'r_variance',
+                                                             'r_kurtosis',
+                                                             'r_skewness',
+                                                             'g_mean',
+                                                             'g_variance',
+                                                             'g_kurtosis',
+                                                             'g_skewness',
+                                                             'b_mean',
+                                                             'b_variance',
+                                                             'b_kurtosis',
+                                                             'b_skewness']]
+
     """
         Purpose: Maps cost feature
     """
     def costs(self, row):
-        return self.cost[row.Spend_USD]
+        return random.randint(self.cost[row.Spend_USD][0], self.cost[row.Spend_USD][1])
 
     """
         Purpose: Maps impressions feature
     """
     def impressions(self, row):
-        return self.impression[row.Impressions]
+        return random.randint(self.impression[row.Impressions][0], self.impression[row.Impressions][1])
 
     """
         Purpose: Grabs image from url and saves as required name
@@ -193,3 +212,11 @@ class Analysis:
     def get_df(self, data_name):
         assert self.exists_df(data_name), 'Dataset does not exist!'
         return self.datasets[data_name]
+
+    """
+        Purpose: Adds external dataset to current instance
+    """
+    def add_df(self, data_name, dataframe):
+        assert not self.exists_df(data_name), 'Dataset already exists'
+
+        self.datasets[data_name] = dataframe

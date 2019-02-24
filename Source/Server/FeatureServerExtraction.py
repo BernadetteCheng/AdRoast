@@ -117,13 +117,13 @@ def rgb_hist(image):
 def classify_effect(score):
     specific_score = int(score[0])
 
-    if specific_score < 10:
+    if specific_score < 50:
         return 'Terrible'
-    elif specific_score < 80:
+    elif specific_score < 100:
         return 'Poor'
-    elif specific_score < 220:
+    elif specific_score < 150:
         return 'Fair'
-    elif specific_score < 1200:
+    elif specific_score < 500:
         return 'Good'
     elif specific_score < 5000:
         return 'Amazing'
