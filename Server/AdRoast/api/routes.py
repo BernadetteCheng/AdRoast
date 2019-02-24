@@ -11,13 +11,12 @@ def analysisPOST(request):
     if request.method == 'POST':
         with open("parsedImage.jpg", "wb") as fh:
             fh.write(base64.decodebytes(request.body))
-        result = extract_feature("P1.jpg")
+        result = extract_feature("parsedImage.jpg")
         data = {
-            'grade': str(result[0]),
-            'improvements': str(result[1]),
-            'score': str(result[2])
+            'grade': str(result[0]),)
         }
-        """return JsonResponse(data)"""
+        return JsonResponse(data)
+        """
         print('P1')
         print('1:' + result[0])
         print('2:' + str(result[1]))
@@ -66,6 +65,7 @@ def analysisPOST(request):
         print('1:' + result[0])
         print('2:' + str(result[1]))
         print('3:' + str(result[2]))
+        """
     else:
         data = {
             'response': 'Not a POST request'
