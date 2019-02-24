@@ -77,7 +77,7 @@ def harris_corner_detection(image):
     gray_component = np.float32(gray_component)
     destination = cv2.cornerHarris(gray_component, 2, 3, 0.04)
 
-    return int(destination)
+    return len(destination)
 
 """
     Purpose: Analyzes specific components of the rgb_histogram
