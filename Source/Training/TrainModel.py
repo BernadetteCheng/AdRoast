@@ -24,9 +24,9 @@ class Train:
     """
     def __init__(self):
         self.train = {}
-        self.parameters = {'n_estimators' : 1000,
+        self.parameters = {'n_estimators' : 10000,
                            'max_leaf_nodes': 3,
-                           'max_depth' : 3,
+                           'max_depth' : 2,
                            'learning_rate' : 0.1,
                            'criterion' : 'mse'}
 
